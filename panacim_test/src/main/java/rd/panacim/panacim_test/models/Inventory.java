@@ -1,14 +1,15 @@
 package rd.panacim.panacim_test.models;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.Timestamp;
 import java.util.Date;
 @Entity
 @Table(name = "inventory")
-@Getter
-@Setter
+@Data
 public class Inventory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,7 +53,7 @@ public class Inventory {
     private String reservationReference;
 
     @Column(name = "\"Inventory_ExpirationDate\"")
-                 private String expirationDate;
+                 private Long expirationDate;
 
     @Column(name = "\"Inventory_ReceivedDate\"")
     private String receivedDate;
@@ -64,7 +65,7 @@ public class Inventory {
     private String uomName;
 
     @Column(name = "\"Inventory_UpdatedDate\"")
-    private String updatedDate;
+    private Long updatedDate;
 
     @Column(name = "\"Inventory_UpdatedBy\"")
     private String updatedBy;
@@ -158,4 +159,390 @@ public class Inventory {
 
     // Getters and Setters
 
+
+
+
+    public Long getInventoryId() {
+        return inventoryId;
+    }
+
+    public void setInventoryId(Long inventoryId) {
+        this.inventoryId = inventoryId;
+    }
+
+    public Long getPartId() {
+        return partId;
+    }
+
+    public void setPartId(Long partId) {
+        this.partId = partId;
+    }
+
+    public String getPartNumber() {
+        return partNumber;
+    }
+
+    public void setPartNumber(String partNumber) {
+        this.partNumber = partNumber;
+    }
+
+    public String getTrackingType() {
+        return trackingType;
+    }
+
+    public void setTrackingType(String trackingType) {
+        this.trackingType = trackingType;
+    }
+
+    public String getMaterialTraceId() {
+        return materialTraceId;
+    }
+
+    public void setMaterialTraceId(String materialTraceId) {
+        this.materialTraceId = materialTraceId;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public Long getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(Long locationId) {
+        this.locationId = locationId;
+    }
+
+    public Long getParentLocationId() {
+        return parentLocationId;
+    }
+
+    public void setParentLocationId(Long parentLocationId) {
+        this.parentLocationId = parentLocationId;
+    }
+
+    public Long getLastLocationId() {
+        return lastLocationId;
+    }
+
+    public void setLastLocationId(Long lastLocationId) {
+        this.lastLocationId = lastLocationId;
+    }
+
+    public String getMaterialControl() {
+        return materialControl;
+    }
+
+    public void setMaterialControl(String materialControl) {
+        this.materialControl = materialControl;
+    }
+
+    public String getMaterialIdentifier() {
+        return materialIdentifier;
+    }
+
+    public void setMaterialIdentifier(String materialIdentifier) {
+        this.materialIdentifier = materialIdentifier;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getReservationReference() {
+        return reservationReference;
+    }
+
+    public void setReservationReference(String reservationReference) {
+        this.reservationReference = reservationReference;
+    }
+
+    public Long getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(Long expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    public String getReceivedDate() {
+        return receivedDate;
+    }
+
+    public void setReceivedDate(String receivedDate) {
+        this.receivedDate = receivedDate;
+    }
+
+    public Long getUomId() {
+        return uomId;
+    }
+
+    public void setUomId(Long uomId) {
+        this.uomId = uomId;
+    }
+
+    public String getUomName() {
+        return uomName;
+    }
+
+    public void setUomName(String uomName) {
+        this.uomName = uomName;
+    }
+
+    public Long getUpdatedDate() {
+        return updatedDate;
+    }
+
+    public void setUpdatedDate(Long updatedDate) {
+        this.updatedDate = updatedDate;
+    }
+
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
+    }
+
+    public String getLabelingStatus() {
+        return labelingStatus;
+    }
+
+    public void setLabelingStatus(String labelingStatus) {
+        this.labelingStatus = labelingStatus;
+    }
+
+    public String getPrinter() {
+        return printer;
+    }
+
+    public void setPrinter(String printer) {
+        this.printer = printer;
+    }
+
+    public String getSplicedMaterialIdentifier() {
+        return splicedMaterialIdentifier;
+    }
+
+    public void setSplicedMaterialIdentifier(String splicedMaterialIdentifier) {
+        this.splicedMaterialIdentifier = splicedMaterialIdentifier;
+    }
+
+    public Long getSplicedInventoryId() {
+        return splicedInventoryId;
+    }
+
+    public void setSplicedInventoryId(Long splicedInventoryId) {
+        this.splicedInventoryId = splicedInventoryId;
+    }
+
+    public Long getCarrierId() {
+        return carrierId;
+    }
+
+    public void setCarrierId(Long carrierId) {
+        this.carrierId = carrierId;
+    }
+
+    public String getCarrierNumber() {
+        return carrierNumber;
+    }
+
+    public void setCarrierNumber(String carrierNumber) {
+        this.carrierNumber = carrierNumber;
+    }
+
+    public Integer getReservedQuantity() {
+        return reservedQuantity;
+    }
+
+    public void setReservedQuantity(Integer reservedQuantity) {
+        this.reservedQuantity = reservedQuantity;
+    }
+
+    public String getCalculatedStatus() {
+        return calculatedStatus;
+    }
+
+    public void setCalculatedStatus(String calculatedStatus) {
+        this.calculatedStatus = calculatedStatus;
+    }
+
+    public Integer getInitialQuantity() {
+        return initialQuantity;
+    }
+
+    public void setInitialQuantity(Integer initialQuantity) {
+        this.initialQuantity = initialQuantity;
+    }
+
+    public Integer getAvailableQuantity() {
+        return availableQuantity;
+    }
+
+    public void setAvailableQuantity(Integer availableQuantity) {
+        this.availableQuantity = availableQuantity;
+    }
+
+    public Integer getConsumedQuantity() {
+        return consumedQuantity;
+    }
+
+    public void setConsumedQuantity(Integer consumedQuantity) {
+        this.consumedQuantity = consumedQuantity;
+    }
+
+    public Integer getScrappedQuantity() {
+        return scrappedQuantity;
+    }
+
+    public void setScrappedQuantity(Integer scrappedQuantity) {
+        this.scrappedQuantity = scrappedQuantity;
+    }
+
+    public Long getParentInventoryId() {
+        return parentInventoryId;
+    }
+
+    public void setParentInventoryId(Long parentInventoryId) {
+        this.parentInventoryId = parentInventoryId;
+    }
+
+    public String getParentMaterialIdentifier() {
+        return parentMaterialIdentifier;
+    }
+
+    public void setParentMaterialIdentifier(String parentMaterialIdentifier) {
+        this.parentMaterialIdentifier = parentMaterialIdentifier;
+    }
+
+    public String getMaterialName() {
+        return materialName;
+    }
+
+    public void setMaterialName(String materialName) {
+        this.materialName = materialName;
+    }
+
+    public String getPuLocation() {
+        return puLocation;
+    }
+
+    public void setPuLocation(String puLocation) {
+        this.puLocation = puLocation;
+    }
+
+    public Integer getLifetimeCount() {
+        return lifetimeCount;
+    }
+
+    public void setLifetimeCount(Integer lifetimeCount) {
+        this.lifetimeCount = lifetimeCount;
+    }
+
+    public String getBulkBarcode() {
+        return bulkBarcode;
+    }
+
+    public void setBulkBarcode(String bulkBarcode) {
+        this.bulkBarcode = bulkBarcode;
+    }
+
+    public Boolean getBulk() {
+        return isBulk;
+    }
+
+    public void setBulk(Boolean bulk) {
+        isBulk = bulk;
+    }
+
+    public String getManufacturingDate() {
+        return manufacturingDate;
+    }
+
+    public void setManufacturingDate(String manufacturingDate) {
+        this.manufacturingDate = manufacturingDate;
+    }
+
+    public String getPartClass() {
+        return partClass;
+    }
+
+    public void setPartClass(String partClass) {
+        this.partClass = partClass;
+    }
+
+    public String getMaterialType() {
+        return materialType;
+    }
+
+    public void setMaterialType(String materialType) {
+        this.materialType = materialType;
+    }
+
+    public String getCheckinDate() {
+        return checkinDate;
+    }
+
+    public void setCheckinDate(String checkinDate) {
+        this.checkinDate = checkinDate;
+    }
+
+    public Integer getUsageCount() {
+        return usageCount;
+    }
+
+    public void setUsageCount(Integer usageCount) {
+        this.usageCount = usageCount;
+    }
+
+    public Long getPartAlternateNumbersId() {
+        return partAlternateNumbersId;
+    }
+
+    public void setPartAlternateNumbersId(Long partAlternateNumbersId) {
+        this.partAlternateNumbersId = partAlternateNumbersId;
+    }
+
+    public String getReelNumber() {
+        return reelNumber;
+    }
+
+    public void setReelNumber(String reelNumber) {
+        this.reelNumber = reelNumber;
+    }
+
+    public Long getMainReelId() {
+        return mainReelId;
+    }
+
+    public void setMainReelId(Long mainReelId) {
+        this.mainReelId = mainReelId;
+    }
+
+    public String getReasonCode() {
+        return reasonCode;
+    }
+
+    public void setReasonCode(String reasonCode) {
+        this.reasonCode = reasonCode;
+    }
+
+    public String getLastCarrierNumber() {
+        return lastCarrierNumber;
+    }
+
+    public void setLastCarrierNumber(String lastCarrierNumber) {
+        this.lastCarrierNumber = lastCarrierNumber;
+    }
 }

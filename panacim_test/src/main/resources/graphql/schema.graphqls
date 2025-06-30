@@ -12,11 +12,11 @@ type Inventory {
     materialIdentifier: String
     status: String
     reservationReference: String
-    expirationDate: String
+    expirationDate: Int
     receivedDate: String
     uomId: Int
     uomName: String
-    updatedDate: String
+    updatedDate: Int
     updatedBy: String
     labelingStatus: String
     printer: String
@@ -47,8 +47,77 @@ type Inventory {
     mainReelId: Int
     reasonCode: String
     lastCarrierNumber: String
+    location: Location
+}
+type Location {
+    locationId: ID!
+    locationName: String
+    locationFullName: String
+    locationTypeId: Int
+    locationTypeName: String
+    locationDescription: String
+    parentLocationId: Int
+    areaId: Int
+    areaName: String
+    isMultiLocation: Boolean
+    restrictOnePart: Boolean
+    prefixName: String
+    prefixSeperator: String
+    childLocationRowCount: Int
+    childLocationColumnCount: Int
+    suffixSeperator: String
+    suffixDigitLen: Int
+    xPos: Float
+    yPos: Float
+    productLimit: Int
+    unloadLocation: Boolean
+    uniqueId: String
+    controlFlag: String
+    barcode: String
+    nameCannotBeChanged: Boolean
+    dontAllowMaterials: Boolean
+    dontAllowCarriers: Boolean
+    ownMaterial: Boolean
+    tsmEnabled: Boolean
+    tsm: String
+    createdBy: String
+    createdOn: String
+    updatedBy: String
+    updatedOn: String
+    notification: String
+    notifyMaterialChange: Boolean
+    subAreaId: Int
+}
+type InventoryUpdateRequests {
+    id: ID!
+    requestCode: String
+    createdTime: String
+    updatedTime: String
+    requestedBy: String
+    approvedBy: String
+    status: String
+}
+type InventoryUpdateRequestsDetail {
+    id: ID!
+    materialId: String
+    updatedBy: String
+    createdTime: String
+    updatedTime: String
+    productCode: String
+    productName: String
+    quantity: Int
+    type: String
+    locationId: Int
+    locationName: String
+    status: String
+    requestId: Int
+    expiredTime:String
+    quantityChange:Int
 }
 
 type Query {
+    allLocations: [Location]
     getAllInventory: [Inventory]
+    getAllInventoryUpdateRequests: [InventoryUpdateRequests!]!
+    getInventoryUpdateRequestsDetailByRequestId(requestId: Int!): [InventoryUpdateRequestsDetail]
 }
